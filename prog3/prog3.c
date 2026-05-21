@@ -13,9 +13,19 @@ void print_bits(unsigned int n) {
     }
     printf("\n");
 }
+void count_one(unsigned int n)
+{
+    int count = 0;
+    while (n) {
+        count += n & 1;
+        n >>= 1;
+    }
+    printf("Number of 1 bits: %d\n", count);
+}
 
 // Example usage
 int main() {
     print_bits(13);   // prints 00000000000000000000000000001101
+    count_one(13);    // prints Number of 1 bits: 3
     return 0;
 }
